@@ -173,7 +173,7 @@ namespace wincpp::modules
             const auto col_address = reference - sizeof( std::uint32_t ) * 3;
 
             // Now we read the complete object locator and check if its valid.
-            const auto col = read< rtti::complete_object_locator_t >( col_address );
+            const auto col = factory.read< rtti::complete_object_locator_t >( col_address );
 
             if ( col.signature != 1 )
                 continue;
