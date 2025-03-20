@@ -224,13 +224,23 @@ namespace wincpp
     template< typename T >
     inline T memory_factory::read( std::uintptr_t address ) const
     {
-        return *reinterpret_cast< T* >( read( address, sizeof( T ) ).get() );
+        const auto buffer = read( address, sizeof( T ) );
+
+        if ( !buffer )
+            throw std::runtime_error( "Failed to read memory." );
+
+        return *reinterpret_cast< T* >( buffer.get() );
     }
 
     template<>
     inline std::string memory_factory::read< std::string >( std::uintptr_t address ) const
     {
-        return std::string( reinterpret_cast< const char* >( read( address, buffer_size ).get() ) );
+        const auto buffer = read( address, buffer_size );
+
+        if ( !buffer )
+            throw std::runtime_error( "Failed to read memory." );
+
+        return std::string( reinterpret_cast< const char* >( buffer.get() ) );
     }
 
     template< typename T >
