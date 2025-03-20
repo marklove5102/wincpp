@@ -70,7 +70,7 @@ namespace wincpp::memory
 
     bool region_list::iterator::operator!=( const iterator &other ) const noexcept
     {
-        return address != other.address;
+        return address != other.address && address < other.address;
     }
 
     bool region_list::iterator::operator==( const iterator &other ) const noexcept

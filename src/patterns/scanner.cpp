@@ -12,15 +12,17 @@ namespace wincpp::patterns
         const pattern_t& pattern,
         const std::span< std::uint8_t >& buffer ) noexcept
     {
-        for ( auto it = buffer.cbegin(); it != buffer.cend(); ++it )
+        const std::uint8_t* base = buffer.data();  // Get raw pointer to data
+
+        for ( std::size_t offset = 0; offset < buffer.size(); ++offset )
         {
-            for ( auto i = 0; i < pattern.size; ++i )
+            for ( std::size_t i = 0; i < pattern.size; ++i )
             {
-                if ( pattern.mask[ i ] && pattern.bytes[ i ] != it[ i ] )
+                if ( pattern.mask[ i ] && pattern.bytes[ i ] != base[ offset + i ] )
                     break;
 
                 if ( i == pattern.size - 1 )
-                    return static_cast< std::int64_t >( it - buffer.cbegin() );
+                    return static_cast< std::int64_t >( offset );
             }
         }
 

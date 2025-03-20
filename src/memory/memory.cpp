@@ -40,7 +40,7 @@ namespace wincpp::memory
         for ( const auto &region : regions() )
         {
             if ( !is_valid_region( region ) )
-                break;
+                continue;
 
             const auto buffer = factory.read( region.address(), region.size() );
 
@@ -60,7 +60,7 @@ namespace wincpp::memory
         for ( const auto &region : regions() )
         {
             if ( !is_valid_region( region ) )
-                break;
+                continue;
 
             const auto buffer = factory.read( region.address(), region.size() );
 
