@@ -8,7 +8,7 @@
 namespace wincpp::patterns
 {
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::naive_t >(
+    std::int64_t scanner::index_of< scanner::algorithm_t::naive_t >(
         const pattern_t& pattern,
         const std::span< std::uint8_t >& buffer ) noexcept
     {
@@ -30,7 +30,7 @@ namespace wincpp::patterns
     }
 
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::bmh_t >( const pattern_t& pattern, const std::span< std::uint8_t >& buffer ) noexcept
+    std::int64_t scanner::index_of< scanner::algorithm_t::bmh_t >( const pattern_t& pattern, const std::span< std::uint8_t >& buffer ) noexcept
     {
         if ( pattern.size == 0 || buffer.size() == 0 || pattern.size > buffer.size() )
         {
@@ -82,7 +82,7 @@ namespace wincpp::patterns
     }
 
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::tbm_t >( const pattern_t& pattern, const std::span< std::uint8_t >& buffer ) noexcept
+    std::int64_t scanner::index_of< scanner::algorithm_t::tbm_t >( const pattern_t& pattern, const std::span< std::uint8_t >& buffer ) noexcept
     {
         if ( pattern.size == 0 || buffer.size() == 0 || pattern.size > buffer.size() )
         {
@@ -149,7 +149,7 @@ namespace wincpp::patterns
     }
 
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::raita_t >(
+    std::int64_t scanner::index_of< scanner::algorithm_t::raita_t >(
         const pattern_t& pattern,
         const std::span< std::uint8_t >& buffer ) noexcept
     {

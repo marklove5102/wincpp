@@ -119,17 +119,17 @@ namespace wincpp::memory
         /// <summary>
         /// Adds a flag to the protection flags.
         /// </summary>
-        inline void add( protection_t protection ) noexcept;
+        void add( protection_t protection ) noexcept;
 
         /// <summary>
         /// Removes a flag from the protection flags.
         /// </summary>
-        inline void remove( protection_t protection ) noexcept;
+        void remove( protection_t protection ) noexcept;
 
         /// <summary>
         /// Checks if the protection flags contain a specific flag.
         /// </summary>
-        inline bool has( protection_t protection ) const noexcept;
+        bool has( protection_t protection ) const noexcept;
 
         /// <summary>
         /// Gets the protection flags.

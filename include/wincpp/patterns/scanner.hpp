@@ -81,7 +81,7 @@ namespace wincpp::patterns
     /// The naive algorithm for scanning.
     /// </summary>
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::naive_t >(
+    std::int64_t scanner::index_of< scanner::algorithm_t::naive_t >(
         const pattern_t& pattern,
         const std::span< std::uint8_t >& bytes ) noexcept;
 
@@ -89,19 +89,19 @@ namespace wincpp::patterns
     /// The Boyer-Moore-Horspool algorithm for scanning.
     /// </summary>
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::bmh_t >( const pattern_t& pattern, const std::span< std::uint8_t >& bytes ) noexcept;
+    std::int64_t scanner::index_of< scanner::algorithm_t::bmh_t >( const pattern_t& pattern, const std::span< std::uint8_t >& bytes ) noexcept;
 
     /// <summary>
     /// The Turbo-BM algorithm for scanning.
     /// </summary>
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::tbm_t >( const pattern_t& pattern, const std::span< std::uint8_t >& bytes ) noexcept;
+    std::int64_t scanner::index_of< scanner::algorithm_t::tbm_t >( const pattern_t& pattern, const std::span< std::uint8_t >& bytes ) noexcept;
 
     /// <summary>
     /// The Raita algorithm for scanning.
     /// </summary>
     template<>
-    static std::int64_t scanner::index_of< scanner::algorithm_t::raita_t >(
+    std::int64_t scanner::index_of< scanner::algorithm_t::raita_t >(
         const pattern_t& pattern,
         const std::span< std::uint8_t >& bytes ) noexcept;
 
