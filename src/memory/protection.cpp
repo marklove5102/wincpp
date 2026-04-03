@@ -76,7 +76,7 @@ namespace wincpp::memory
             ss << "writecombine | ";
 
         if ( flags.has( protection_t::targets_invalid_t ) )
-            ss << "tarets_invalid | ";
+            ss << "targets_invalid | ";
 
         if ( flags.has( protection_t::targets_no_update_t ) )
             ss << "targets_no_update | ";
